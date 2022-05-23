@@ -1,5 +1,8 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
@@ -7,23 +10,26 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  if (gLoading) {
+  if (gLoading || loading) {
     return <Loading></Loading>;
   }
-  if (gError) {
-    toast.error(gError?.message);
+  if (gError || error) {
+    toast.error(gError?.message || error?.message);
   }
-  if (gUser) {
-    console.log(gUser);
+  if (gUser || user) {
+    console.log(gUser || user);
   }
   const onSubmit = (data) => {
     console.log(data);
+    signInWithEmailAndPassword(data.email, data.password);
   };
 
   return (
