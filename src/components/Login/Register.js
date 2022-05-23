@@ -1,18 +1,21 @@
 import React from "react";
 import {
+  useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
-import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
@@ -22,27 +25,50 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  if (gLoading || loading) {
+  if (gLoading || loading || updating) {
     return <Loading></Loading>;
   }
-  if (gError || error) {
-    toast.error(gError?.message || error?.message);
+  if (gError || error || updateError) {
+    toast.error(gError?.message || error?.message || updateError?.message);
   }
   if (gUser || user) {
     console.log(gUser || user);
-    navigate(from, { replace: true });
   }
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    navigate(from, { replace: true });
   };
-
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="card w-96 bg-green-200 shadow-xl">
         <div className="card-body">
-          <h2 className="text-center text-3xl font-bold">Login</h2>
+          <h2 className="text-center text-3xl font-bold">Join Valo Phone</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="name"
+                placeholder="Your Full Name"
+                className="input input-bordered w-full"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is required! ",
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.name?.type === "required" && (
+                  <span className="label-text-alt text-red-600">
+                    {errors.name.message}
+                  </span>
+                )}
+              </label>
+            </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -113,13 +139,13 @@ const Login = () => {
             <input
               className="btn btn-primary btn-outline w-full"
               type="submit"
-              value="Login"
+              value="Register"
             />
           </form>
           <p className="text-right">
-            New to Valo Phone?{" "}
-            <Link to={"/register"} className="font-bold text-primary">
-              Join Today
+            Already have an account?{" "}
+            <Link to={"/login"} className="font-bold text-primary">
+              Login
             </Link>
           </p>
           <div className="divider">OR</div>
@@ -135,4 +161,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
