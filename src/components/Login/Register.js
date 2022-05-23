@@ -1,7 +1,6 @@
 import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
