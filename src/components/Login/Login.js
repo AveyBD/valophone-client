@@ -2,9 +2,13 @@ import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  if (gLoading) {
+    return <Loading></Loading>;
+  }
   if (gError) {
     toast.error(gError?.message);
   }
