@@ -10,6 +10,7 @@ import MyReview from "./components/Dashboard/MyReview";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
+import Payment from "./components/Payment/Payment";
 import Navbar from "./components/Shared/Navbar";
 import RequireAuth from "./components/Shared/RequireAuth";
 import Shop from "./components/Shop/Shop";
@@ -29,6 +30,14 @@ function App() {
           element={
             <RequireAuth>
               <Checkout />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/payment/:id"
+          element={
+            <RequireAuth>
+              <Payment />
             </RequireAuth>
           }
         ></Route>

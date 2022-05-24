@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Checkout = () => {
@@ -21,6 +21,7 @@ const Checkout = () => {
     handleSubmit,
     reset,
   } = useForm();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
     const price = parseInt(product.price * data.quantity);
@@ -47,6 +48,7 @@ const Checkout = () => {
           if (result.insertedId) {
             toast.success("Your Order has been placed!");
             reset();
+            navigate(`/payment/${result.insertedId}`);
           }
         });
     }
