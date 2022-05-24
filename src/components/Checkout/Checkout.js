@@ -28,6 +28,27 @@ const Checkout = () => {
       toast.error(
         `You can't buy less than ${product.minqty} and more than ${product?.maxqty}`
       );
+    } else {
+      const order = {
+        user: user.email,
+        product: product.productName,
+        qty: data.qty,
+        price,
+      };
+      fetch("http://localhost:5000/orders", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(order),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.insertedId) {
+            toast.success("Your Order has been placed!");
+            reset();
+          }
+        });
     }
   };
 
