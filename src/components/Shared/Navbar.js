@@ -8,6 +8,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
+    localStorage.removeItem("accessToken");
   };
   return (
     <div>
@@ -71,7 +72,10 @@ const Navbar = () => {
               <p onClick={logout} className="btn btn-primary btn-outline">
                 LogOut
               </p>
-              <Link to={"/dashboard"} className="hidden md:flex btn btn-primary btn-outline">
+              <Link
+                to={"/dashboard"}
+                className="hidden md:flex btn btn-primary btn-outline"
+              >
                 Dashboard
               </Link>
             </>
