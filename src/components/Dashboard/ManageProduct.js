@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import AdminProductRow from "./AdminProductRow";
 
 const ManageProduct = () => {
-  const [decProduct, setDelProduct] = useState(null);
+  const [delProduct, setDelProduct] = useState(null);
   const {
     data: products,
     isLoading,
