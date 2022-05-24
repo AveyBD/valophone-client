@@ -1,13 +1,31 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const AddProduct = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          toast.success("Product has been Added");
+          reset();
+        }
+      });
+  };
 
   return (
     <div>
@@ -21,7 +39,7 @@ const AddProduct = () => {
               <label class="input-group">
                 <span>Name</span>
                 <input
-                  {...register("productname", {
+                  {...register("productName", {
                     required: {
                       value: true,
                       message: "Product Name is required! ",
