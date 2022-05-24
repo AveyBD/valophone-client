@@ -24,7 +24,7 @@ const Checkout = () => {
   const onSubmit = (data) => {
     console.log(data);
     const price = parseInt(product.price * data.quantity);
-    if (data.quantity < product.minqty) {
+    if (data.quantity < product.minqty || data.quantity > product.maxqty) {
       toast.error(
         `You can't buy less than ${product.minqty} and more than ${product?.maxqty}`
       );
