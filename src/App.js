@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Navbar from "./components/Shared/Navbar";
 import RequireAuth from "./components/Shared/RequireAuth";
+import Shop from "./components/Shop/Shop";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/shop" element={<Shop />}></Route>
         <Route
           path="/dashboard"
           element={
