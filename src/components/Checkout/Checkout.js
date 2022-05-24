@@ -6,7 +6,6 @@ import auth from "../../firebase.init";
 
 const Checkout = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const [product, setProduct] = useState([]);
   const params = useParams();
   const url = `http://localhost:5000/product/${params.id}`;
@@ -23,6 +22,8 @@ const Checkout = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    const price = parseInt(product.price*data.quantity)
+    console.log(price,product.price);
   };
 
   return (
@@ -48,6 +49,9 @@ const Checkout = () => {
           </p>
           <p>
             <b>Available:</b> {product?.available}
+          </p>
+          <p>
+            <b>Price:</b> {product?.price}
           </p>
         </div>
         <div className="md:w-1/2 ">
@@ -96,6 +100,48 @@ const Checkout = () => {
                   {errors.phoneNumber?.type === "required" && (
                     <span class="label-text text-red-600">
                       {errors.phoneNumber.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              <div class="form-control">
+                <textarea
+                  {...register("address", {
+                    required: {
+                      value: true,
+                      message: "Address is required! ",
+                    },
+                  })}
+                  class="textarea textarea-bordered h-24"
+                  placeholder="Your complete address."
+                ></textarea>
+                <label class="label">
+                  {errors.address?.type === "required" && (
+                    <span class="label-text text-red-600">
+                      {errors.address.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              <div class="form-control mt-2">
+                <label class="input-group">
+                  <span>Quantity</span>
+                  <input
+                    {...register("quantity", {
+                      required: {
+                        value: true,
+                        message: "Purchase Quantity is required! ",
+                      },
+                    })}
+                    type="text"
+                    placeholder="10"
+                    class="input input-bordered w-full"
+                  />
+                </label>
+                <label class="label">
+                  {errors.quantity?.type === "required" && (
+                    <span class="label-text text-red-600">
+                      {errors.quantity.message}
                     </span>
                   )}
                 </label>
