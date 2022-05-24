@@ -26,7 +26,11 @@ const Checkout = () => {
   const onSubmit = (data) => {
     console.log(data);
     const price = parseInt(product.price * data.quantity);
-    if (data.quantity < product.minqty || data.quantity > product.maxqty || data.quantity > product.available) {
+    if (
+      data.quantity < product.minqty ||
+      data.quantity > product.maxqty ||
+      data.quantity > product.available
+    ) {
       toast.error(
         `You can't buy less than ${product.minqty}, more than ${product?.maxqty} and total stock ${product.available}.`
       );
@@ -34,12 +38,13 @@ const Checkout = () => {
       const order = {
         user: user.email,
         product: product.productName,
+        address: data.address,
         qty: data.quantity,
         cost: product.price,
         time: date,
         price,
-        paymentStatus: 'pending',
-        orderStatus: 'placed'
+        paymentStatus: "pending",
+        orderStatus: "placed",
       };
       fetch("http://localhost:5000/orders", {
         method: "POST",

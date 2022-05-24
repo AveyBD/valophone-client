@@ -1,4 +1,4 @@
-import { faCalculator, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard, faCalculator, faToolbox } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -35,6 +35,7 @@ const Payment = () => {
                 {order.product}
               </h2>
               <p><FontAwesomeIcon icon={faCalculator}></FontAwesomeIcon>: {order.time}</p>
+              <p><FontAwesomeIcon icon={faAddressCard}></FontAwesomeIcon>: {order.address}</p>
             </div>
           </div>
         </div>
