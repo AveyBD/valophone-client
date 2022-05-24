@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
@@ -14,6 +15,16 @@ const Checkout = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className="md:w-1/2 mx-auto mt-5">
       <h2 className="text-center font-bold text-primary text-3xl shadow-xl">
@@ -64,9 +75,36 @@ const Checkout = () => {
               </label>
             </div>
           </div>
-
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Place Order</button>
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div class="form-control mt-2">
+                <label class="input-group">
+                  <span>Phone</span>
+                  <input
+                    {...register("phoneNumber", {
+                      required: {
+                        value: true,
+                        message: "Phone Number is required! ",
+                      },
+                    })}
+                    type="text"
+                    placeholder="0178945612"
+                    class="input input-bordered w-full"
+                  />
+                </label>
+                <label class="label">
+                  {errors.phoneNumber?.type === "required" && (
+                    <span class="label-text text-red-600">
+                      {errors.phoneNumber.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              <input
+                className="btn btn-primary btn-outline w-full"
+                type="submit"
+              />
+            </form>
           </div>
         </div>
       </div>

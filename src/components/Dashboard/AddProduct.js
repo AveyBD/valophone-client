@@ -196,7 +196,6 @@ const AddProduct = () => {
                 )}
               </label>
             </div>
-            <input />
             <input
               className="btn btn-primary btn-outline w-full"
               type="submit"
