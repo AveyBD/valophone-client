@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 import AdminProductRow from "./AdminProductRow";
 
 const ManageProduct = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
+  const [decProduct, setDelProduct] = useState(null);
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery("products", () =>
     fetch("http://localhost:5000/products", {
-      method: "GET",
-      // headers: {
-      //     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-      // }
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
-  }, []);
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div>
       <h2 className="text-secondary font-bold text-xl">
@@ -39,10 +43,13 @@ const ManageProduct = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {products.map((product, index) => (
               <AdminProductRow
                 key={product._id}
                 product={product}
+                refetch={refetch}
+                index = {index}
+                setDelProduct = {setDelProduct}
               ></AdminProductRow>
             ))}
           </tbody>
