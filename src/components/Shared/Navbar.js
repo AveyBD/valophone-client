@@ -39,7 +39,14 @@ const Navbar = () => {
               </li>
 
               <li>
-                <a>Item 3</a>
+                {user && (
+                  <Link
+                    to={"/dashboard"}
+                    className="btn btn-primary btn-outline"
+                  >
+                    Dashboard
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
@@ -64,7 +71,7 @@ const Navbar = () => {
               <p onClick={logout} className="btn btn-primary btn-outline">
                 LogOut
               </p>
-              <Link to={"/dashboard"} className="btn btn-primary btn-outline">
+              <Link to={"/dashboard"} className="hidden md:flex btn btn-primary btn-outline">
                 Dashboard
               </Link>
             </>
