@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
+import Checkout from "./components/Checkout/Checkout";
 import AddProduct from "./components/Dashboard/AddProduct";
 import Dashboard from "./components/Dashboard/Dashboard";
 import ManageProduct from "./components/Dashboard/ManageProduct";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
+        <Route path="/checkout/:id" element={<Checkout />}></Route>
         <Route
           path="/dashboard"
           element={
