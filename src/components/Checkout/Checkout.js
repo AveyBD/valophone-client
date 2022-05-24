@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
@@ -22,8 +23,12 @@ const Checkout = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const price = parseInt(product.price*data.quantity)
-    console.log(price,product.price);
+    const price = parseInt(product.price * data.quantity);
+    if (data.quantity < product.minqty) {
+      toast.error(
+        `You can't buy less than ${product.minqty} and more than ${product?.maxqty}`
+      );
+    }
   };
 
   return (
@@ -127,14 +132,14 @@ const Checkout = () => {
                 <label class="input-group">
                   <span>Quantity</span>
                   <input
+                    type="number"
                     {...register("quantity", {
                       required: {
                         value: true,
                         message: "Purchase Quantity is required! ",
                       },
                     })}
-                    type="text"
-                    placeholder="10"
+                    placeholder={product.minqty}
                     class="input input-bordered w-full"
                   />
                 </label>
