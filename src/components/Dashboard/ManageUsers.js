@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 import UserRow from "./UserRow";
 
 const ManageUsers = () => {
@@ -14,6 +15,9 @@ const ManageUsers = () => {
       },
     }).then((res) => res.json())
   );
+  if(isLoading){
+      return <Loading></Loading>
+  }
   console.log(users);
   return (
     <div>

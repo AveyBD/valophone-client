@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 import UserOrderRow from "./UserOrderRow";
 
 const MyOrder = () => {
@@ -18,6 +19,9 @@ const MyOrder = () => {
       },
     }).then((res) => res.json())
   );
+  if(isLoading){
+    return <Loading></Loading>
+  }
   console.log(orders);
   return (
     <div>
