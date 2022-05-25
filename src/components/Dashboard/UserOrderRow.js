@@ -1,9 +1,14 @@
 import { faMoneyBillAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UserOrderRow = ({ order, index, refetch }) => {
+  const navigate = useNavigate();
+  const payOrder = id =>{
+    navigate(`/payment/${id}`);
+  }
   const delOrder = (id) => {
     console.log("Deleting:", id);
     Swal.fire({
@@ -52,7 +57,7 @@ const UserOrderRow = ({ order, index, refetch }) => {
               className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
               icon={faTrash}
             ></FontAwesomeIcon>{" "}
-            <FontAwesomeIcon
+            <FontAwesomeIcon onClick={()=>payOrder(order?._id)}
               className="font-2xl cursor-pointer bg-black p-2 rounded text-white"
               icon={faMoneyBillAlt}
             ></FontAwesomeIcon>
