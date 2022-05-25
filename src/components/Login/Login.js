@@ -32,9 +32,11 @@ const Login = () => {
   }
   if (gUser || user) {
     console.log(gUser || user);
-    navigate(from, { replace: true });
+    console.log('Token:',token);
+    // navigate(from, { replace: true });
   }
   if (token) {
+    console.log('Token:',token);
     navigate(from, { replace: true });
   }
 
