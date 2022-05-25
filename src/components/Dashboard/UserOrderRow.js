@@ -1,4 +1,4 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faDollar, faDollarSign, faMoneyBillAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
@@ -11,14 +11,14 @@ const UserOrderRow = ({order, index}) => {
       <td>${order.price}</td>
       <td>{order.paymentStatus.toUpperCase()}</td>
       <td>{order.orderStatus.toUpperCase()}</td>
-      <td><FontAwesomeIcon
+      <td>{order.paymentStatus == 'pending' && <><FontAwesomeIcon
           className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
           icon={faTrash}
-        ></FontAwesomeIcon>
+        ></FontAwesomeIcon>{" "}
         <FontAwesomeIcon
-          className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
-          icon={faTrash}
-        ></FontAwesomeIcon></td>
+          className="font-2xl cursor-pointer bg-black p-2 rounded text-white"
+          icon={faMoneyBillAlt}
+        ></FontAwesomeIcon></>}</td>
     </tr>
   );
 };
