@@ -41,6 +41,7 @@ const MyOrder = () => {
                 index={index}
                 key={order._id}
                 order={order}
+                refetch={refetch}
               ></UserOrderRow>
             ))}
           </tbody>
