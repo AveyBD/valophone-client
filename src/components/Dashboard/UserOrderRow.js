@@ -1,4 +1,4 @@
-import { faDollar, faDollarSign, faMoneyBillAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faMoneyBillAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
