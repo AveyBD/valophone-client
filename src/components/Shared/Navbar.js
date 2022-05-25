@@ -1,11 +1,13 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const location = useLocation();
+
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -78,6 +80,22 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
+              {location.pathname === "/dashboard" && <label tabIndex="1" for='dashDrawer' className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label> }
             </>
           ) : (
             <Link to={"/login"} className="btn btn-primary btn-outline">
