@@ -26,10 +26,11 @@ const Checkout = () => {
   const onSubmit = (data) => {
     console.log(data);
     const price = parseInt(product.price * data.quantity);
+    const inQty = parseInt(data.quantity);
     if (
-      data.quantity < product.minqty ||
-      data.quantity > product.maxqty ||
-      data.quantity > product.available
+      inQty < product.minqty ||
+      inQty > product.maxqty ||
+      inQty > product.available
     ) {
       toast.error(
         `You can't buy less than ${product.minqty}, more than ${product?.maxqty} and total stock ${product.available}.`
