@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const UserOrderRow = ({order, index}) => {
+    const delOrder =(id)=>{
+        console.log('Deleting:', id);
+    }
   return (
     <tr>
       <th>{index +1}</th>
@@ -12,6 +15,7 @@ const UserOrderRow = ({order, index}) => {
       <td>{order.paymentStatus.toUpperCase()}</td>
       <td>{order.orderStatus.toUpperCase()}</td>
       <td>{order.paymentStatus == 'pending' && <><FontAwesomeIcon
+      onClick={()=>delOrder(order._id)}
           className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
           icon={faTrash}
         ></FontAwesomeIcon>{" "}

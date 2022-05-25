@@ -4,7 +4,6 @@ import Loading from "../Shared/Loading";
 import AdminProductRow from "./AdminProductRow";
 
 const ManageProduct = () => {
-  const [delProduct, setDelProduct] = useState(null);
   const {
     data: products,
     isLoading,
@@ -49,7 +48,6 @@ const ManageProduct = () => {
                 product={product}
                 refetch={refetch}
                 index = {index}
-                setDelProduct = {setDelProduct}
               ></AdminProductRow>
             ))}
           </tbody>
