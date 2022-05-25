@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const ManageOrder = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <h2>Manage Admin Order</h2>
+    </div>
+  );
 };
 
 export default ManageOrder;

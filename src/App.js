@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
 import AddProduct from "./components/Dashboard/AddProduct";
 import Dashboard from "./components/Dashboard/Dashboard";
+import ManageOrder from "./components/Dashboard/ManageOrder";
 import ManageProduct from "./components/Dashboard/ManageProduct";
 import MyOrder from "./components/Dashboard/MyOrder";
 import MyProfile from "./components/Dashboard/MyProfile";
@@ -53,6 +54,7 @@ function App() {
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="manage" element={<ManageOrder></ManageOrder>}></Route>
           <Route
             path="manageproduct"
             element={<ManageProduct></ManageProduct>}
