@@ -22,7 +22,7 @@ const Checkout = () => {
     reset,
   } = useForm();
   const navigate = useNavigate();
-  const date = new Date();
+  const date = new Date().toLocaleString();
   const onSubmit = (data) => {
     console.log(data);
     const price = parseInt(product.price * data.quantity);
