@@ -23,13 +23,13 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [x] Homepage Will have 
    - [x] Navbar
   - [x] Hero Banner
-  - [ ] Parts Section
-    - [ ] Tools Part Section will have 6 tools with Name, Img, description, minimum order quantity, available quantity, price per unit, buy now button
-  - [ ] Business Summary Stats
-    - [ ] Business Stats
-  - [ ] Customer Testimonials 
-  - [ ] Footer
-  - [ ] Two Different Section 
+  - [x] Parts Section
+    - [x] Tools Part Section will have 6 tools with Name, Img, description, minimum order quantity, available quantity, price per unit, buy now button
+  - [x] Business Summary Stats
+    - [x] Business Stats
+  - [x] Customer Testimonials 
+  - [x] Footer
+  - [x] Two Different Section 
 
 ### Purchase Page 
 - [x] It will be a private route
@@ -51,7 +51,7 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 ### Dashboard 
 - [x] User will see a dashboard option after login 
 - [x] Non Admin will see My Orders, Review, My Profile Section
-- [ ] User Can update their profile from my profile section 
+- [x] User Can update their profile from my profile section 
 - [x] On My Order Page they will see their own order 
 - [x] User can cancel non paid order
 - [x] Warning before cancel
@@ -60,23 +60,23 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [x] For Paid Order, User will see Trx ID on my order page 
 - [x] Status Table paid, unpaid, pending 
 - [x] User can add review the review will be shown on home page. 
-- [ ] My Profile will show user name and and email address
-- [ ] My Profile will have input fields like education, location, phone number,  linkedin profile. The information will be saved on database upon submit.
+- [x] My Profile will show user name and and email address
+- [x] My Profile will have input fields like education, location, phone number,  linkedin profile. The information will be saved on database upon submit.
 - [x] Admin Will see Manage All Order, Add a Product, Manage product,  Manage User
 - [x] Admin Can add product with Image BB Upload Link
 
 ### Blog Page
-- [ ] Question answer in blog section
+- [x] Question answer in blog section
 ### My Portfolio Route
-- [ ] Show name, email, education background, skill tech and three live website like. 
+- [x] Show name, email, education background, skill tech and three live website like. 
 
 ### 404 Page
 - [x] Meaningful 404 Page 
 
 ## Bonus Part
 
-- [ ] Readme file should have client and server link
-- [ ] Add 5 Bullet Point About Website Feaures
+- [x] Readme file should have client and server link
+- [x] Add 5 Bullet Point About Website Feaures
 - [x] Github Commit
 - [x] Make Website responsive 
 - [x] No Lorem Ipsum
@@ -93,7 +93,7 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 
 
 ## What to submit 
-- [ ] Client-side code github repository
-- [ ] Server-side code github repository
-- [ ] Live website link
-- [ ] For our testing purpose, you will need to provide admin credentials (an email address and a password)
+- [x] Client-side code github repository
+- [x] Server-side code github repository
+- [x] Live website link
+- [x] For our testing purpose, you will need to provide admin credentials (an email address and a password)
