@@ -67,6 +67,10 @@ const MyProfile = () => {
                 {loggedUser.location}
               </h2>
               <h2>
+                <b>Location: </b>
+                {loggedUser.education}
+              </h2>
+              <h2>
                 <b>Phone: </b>
                 {loggedUser.phone}
               </h2>
@@ -107,6 +111,17 @@ const MyProfile = () => {
                     placeholder="Your Location"
                     className="input input-bordered w-full"
                     {...register("location")}
+                  />
+                </div>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Highest Education</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your Location"
+                    className="input input-bordered w-full"
+                    {...register("education")}
                   />
                 </div>
                 <div className="form-control w-full max-w-xs">
