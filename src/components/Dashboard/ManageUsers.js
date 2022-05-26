@@ -15,8 +15,8 @@ const ManageUsers = () => {
       },
     }).then((res) => res.json())
   );
-  if(isLoading){
-      return <Loading></Loading>
+  if (isLoading) {
+    return <Loading></Loading>;
   }
   console.log(users);
   return (
@@ -33,9 +33,14 @@ const ManageUsers = () => {
             </tr>
           </thead>
           <tbody>
-           {
-               users.map((user,index) => <UserRow key={user._id} index={index} user={user} refetch={refetch}></UserRow>)
-           }
+            {users.map((user, index) => (
+              <UserRow
+                key={user._id}
+                index={index}
+                user={user}
+                refetch={refetch}
+              ></UserRow>
+            ))}
           </tbody>
         </table>
       </div>
