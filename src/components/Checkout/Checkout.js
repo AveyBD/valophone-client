@@ -188,6 +188,7 @@ const Checkout = () => {
               <input
                 className="btn btn-primary btn-outline w-full"
                 type="submit"
+                value='Place Order'
               />
             </form>
           </div>
