@@ -19,6 +19,6 @@ const useAdmin = (user) => {
         setAdminLoading(false)});
     }
   }, [user]);
-  return [admin];
+  return [admin, adminLoading];
 };
 export default useAdmin;

@@ -14,6 +14,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Payment from "./components/Payment/Payment";
 import Navbar from "./components/Shared/Navbar";
+import RequireAdmin from "./components/Shared/RequireAdmin";
 import RequireAuth from "./components/Shared/RequireAuth";
 import Shop from "./components/Shop/Shop";
 
@@ -54,9 +55,30 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
-          <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
-          <Route path="manage" element={<ManageOrder></ManageOrder>}></Route>
-          <Route path="users" element={<ManageUsers></ManageUsers>}></Route>
+          <Route
+            path="addproduct"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manage"
+            element={
+              <RequireAdmin>
+                <ManageOrder></ManageOrder>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <ManageUsers></ManageUsers>
+              </RequireAdmin>
+            }
+          ></Route>
           <Route
             path="manageproduct"
             element={<ManageProduct></ManageProduct>}
