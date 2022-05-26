@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
+import HomeReview from "./HomeReview";
 import LatestParts from "./LatestParts";
 import Newsletter from "./Newsletter";
 import Partner from "./Partner";
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <LatestParts></LatestParts>
       <Stats></Stats>
+      <HomeReview></HomeReview>
       <Shipment></Shipment>
       <Newsletter></Newsletter>
       <Partner></Partner>
