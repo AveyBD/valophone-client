@@ -52,9 +52,9 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [x] Warning before cancel
 - [x] Payment Button for non paid order
 - [x] Payment Page Will show order Descriptions 
-- [ ] For Paid Order, User will see Trx ID on my order page 
+- [x] For Paid Order, User will see Trx ID on my order page 
 - [x] Status Table paid, unpaid, pending 
-- [ ] User can add review the review will be shown on home page. 
+- [x] User can add review the review will be shown on home page. 
 - [ ] My Profile will show user name and and email address
 - [ ] My Profile will have input fields like education, location, phone number,  linkedin profile. The information will be saved on database upon submit.
 - [x] Admin Will see Manage All Order, Add a Product, Manage product,  Manage User
