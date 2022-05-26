@@ -36,6 +36,8 @@ const UserRow = ({ user, index, refetch }) => {
         if (data.modifiedCount) {
           refetch();
           toast.success(`${user?.displayName} is now Regular User`);
+        } else {
+          toast.error("You dont have enough permission!");
         }
       });
   };
