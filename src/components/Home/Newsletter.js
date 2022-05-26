@@ -25,13 +25,13 @@ const Newsletter = () => {
                   <input
                     type="email"
                     id="email"
-                    placeholder="johnstark97@gmail.com"
-                    className="focus:outline-none focus:border-indigo-700 border-gray-300 border rounded-sm py-2 outline-none pl-2 pr-2"
+                    placeholder="yourmail@gmail.com"
+                    className="focus:outline-none rounded focus:border-primary border-gray-300 border py-2 outline-none pl-2 pr-2"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="focus:outline-none bg-indigo-700 hover:bg-indigo-600 text-white text-base w-full py-3 px-6 rounded"
+                  className="focus:outline-none bg-primary hover:bg-secondary text-white text-base w-full py-3 px-6 rounded"
                 >
                   Subscribe to Newsletter
                 </button>

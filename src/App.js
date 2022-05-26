@@ -13,6 +13,8 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Payment from "./components/Payment/Payment";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Footer from "./components/Shared/Footer";
 import Navbar from "./components/Shared/Navbar";
 import NotFound from "./components/Shared/NotFound";
 import RequireAdmin from "./components/Shared/RequireAdmin";
@@ -27,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
         <Route
@@ -87,6 +90,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </>
   );
 }
