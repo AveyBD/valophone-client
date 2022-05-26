@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
+import Blog from "./components/Blog/Blog";
 import Checkout from "./components/Checkout/Checkout";
 import AddProduct from "./components/Dashboard/AddProduct";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
