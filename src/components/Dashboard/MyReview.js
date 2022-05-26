@@ -1,14 +1,42 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import auth from "../../firebase.init";
 
 const MyReview = () => {
+  const [user] = useAuthState(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    const date = new Date().toLocaleString();
+    const newReview = {
+      rating: data.rating,
+      review: data.review,
+      time: date,
+      user: user.email,
+      reviewer: user.displayName,
+    };
+    console.log(newReview);
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          toast.success("Review has been Added");
+          reset();
+        }
+      });
   };
   return (
     <div>
@@ -32,66 +60,61 @@ const MyReview = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="label-text">Rating Out of 5</span>
                   </label>
                   <input
-                    type="email"
-                    placeholder="Your Email"
+                    type="number"
+                    placeholder="Your Rating"
                     className="input input-bordered w-full"
-                    {...register("email", {
+                    {...register("rating", {
+                      min: 1,
+                      max: 5,
                       required: {
                         value: true,
-                        message: "Email is required! ",
-                      },
-                      pattern: {
-                        value:
-                          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                        message: "Enter Valid Email",
+                        message: "Rating is required! ",
                       },
                     })}
                   />
                   <label className="label">
-                    {errors.email?.type === "required" && (
+                    {errors.rating?.type === "required" && (
                       <span className="label-text-alt text-red-600">
-                        {errors.email.message}
+                        {errors.rating.message}
                       </span>
                     )}
-                    {errors.email?.type === "pattern" && (
-                      <span className="label-text-alt text-red-600">
-                        {errors.email.message}
-                      </span>
-                    )}
+
+                    <span className="label-text-alt text-primary">
+                      Review Must Be between 1-5
+                    </span>
                   </label>
                 </div>
                 <div className="form-control w-full max-w-xs">
                   <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="label-text">Review</span>
                   </label>
-                  <input
-                    type="password"
+                  <textarea
                     placeholder="Your Password"
                     className="input input-bordered w-full"
-                    {...register("password", {
+                    {...register("review", {
                       required: {
                         value: true,
-                        message: "Password is required! ",
+                        message: "Review is required! ",
                       },
                       minLength: {
-                        value: 8,
+                        value: 50,
                         message:
-                          "Password must be longer than 8 character or long!",
+                          "Review must be longer than 50 character or long!",
                       },
                     })}
                   />
                   <label className="label">
-                    {errors.password?.type === "required" && (
+                    {errors.review?.type === "required" && (
                       <span className="label-text-alt text-red-600">
-                        {errors.password.message}
+                        {errors.review.message}
                       </span>
                     )}
-                    {errors.password?.type === "minLength" && (
+                    {errors.review?.type === "minLength" && (
                       <span className="label-text-alt text-red-600">
-                        {errors.password.message}
+                        {errors.review.message}
                       </span>
                     )}
                   </label>
@@ -100,7 +123,7 @@ const MyReview = () => {
                 <input
                   className="btn btn-primary btn-outline w-full"
                   type="submit"
-                  value="Login"
+                  value="Submit"
                 />
               </form>
             </div>
