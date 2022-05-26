@@ -15,9 +15,9 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [x] Site Must Be About Manufacturer.
 
 ### Home Page
-- [ ] Homepage Will have 
-   - [ ] Navbar
-  - [ ] Hero Banner
+- [x] Homepage Will have 
+   - [x] Navbar
+  - [x] Hero Banner
   - [ ] Parts Section
     - [ ] Tools Part Section will have 6 tools with Name, Img, description, minimum order quantity, available quantity, price per unit, buy now button
   - [ ] Business Summary Stats
@@ -27,38 +27,38 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
   - [ ] Two Different Section 
 
 ### Purchase Page 
-- [ ] It will be a private route
-- [ ] User will redirect to the desire page after login
-- [ ] Purchase page will show detail information about the parts
-- [ ] Two Grid Card
-  - [ ] One side will be about product
-  - [ ] 1st side, there will be option to change quantity but not more than available and not less than minimum quantity.
-  - [ ] Other Side will show user name, email from auth state
-  - [ ] 2nd Side should have option to input user address phone number
+- [x] It will be a private route
+- [x] User will redirect to the desire page after login
+- [x] Purchase page will show detail information about the parts
+- [x] Two Grid Card
+  - [x] One side will be about product
+  - [x] 1st side, there will be option to change quantity but not more than available and not less than minimum quantity.
+  - [x] Other Side will show user name, email from auth state
+  - [x] 2nd Side should have option to input user address phone number
 
 ### Login Page 
-- [ ] Login With Email and Password
-- [ ] Registration Page should name name option and auto update in database
-- [ ] Save user information on database upon login or create account
-- [ ] Show logout or user profile picture after login / before login only login button
-- [ ] One Social Login Option 
+- [x] Login With Email and Password
+- [x] Registration Page should name name option and auto update in database
+- [x] Save user information on database upon login or create account
+- [x] Show logout or user profile picture after login / before login only login button
+- [x] One Social Login Option 
   
 ### Dashboard 
-- [ ] User will see a dashboard option after login 
-- [ ] Non Admin will see My Orders, Review, My Profile Section
+- [x] User will see a dashboard option after login 
+- [x] Non Admin will see My Orders, Review, My Profile Section
 - [ ] User Can update their profile from my profile section 
-- [ ] On My Order Page they will see their own order 
-- [ ] User can cancel non paid order
-- [ ] Warning before cancel
-- [ ] Payment Button for non paid order
-- [ ] Payment Page Will show order Descriptions 
+- [x] On My Order Page they will see their own order 
+- [x] User can cancel non paid order
+- [x] Warning before cancel
+- [x] Payment Button for non paid order
+- [x] Payment Page Will show order Descriptions 
 - [ ] For Paid Order, User will see Trx ID on my order page 
-- [ ] Status Table paid, unpaid, pending 
+- [x] Status Table paid, unpaid, pending 
 - [ ] User can add review the review will be shown on home page. 
 - [ ] My Profile will show user name and and email address
 - [ ] My Profile will have input fields like education, location, phone number,  linkedin profile. The information will be saved on database upon submit.
-- [ ] Admin Will see Manage All Order, Add a Product, Manage product,  Manage User
-- [ ] Admin Can add product with Image BB Upload Link
+- [x] Admin Will see Manage All Order, Add a Product, Manage product,  Manage User
+- [x] Admin Can add product with Image BB Upload Link
 
 ### Blog Page
 - [ ] Question answer in blog section
@@ -72,19 +72,19 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 
 - [ ] Readme file should have client and server link
 - [ ] Add 5 Bullet Point About Website Feaures
-- [ ] Github Commit
-- [ ] Make Website responsive 
-- [ ] No Lorem Ipsum
-- [ ] use git ignore, .env 
+- [x] Github Commit
+- [x] Make Website responsive 
+- [x] No Lorem Ipsum
+- [x] use git ignore, .env 
 - [ ] On Manage order all order will be shown, paid non paid status, admin can update the paid status
 - [ ] admin can change the order status pending to shipped
 - [ ] admin can cancel the order (non paid only)
-- [ ] Confirm Before Delete
-- [ ] basic JWT
-- [ ] verify admin
-- [ ] admin can delete product
-- [ ] use react query for API Call
-- [ ] Use React Hook Form
+- [x] Confirm Before Delete
+- [x] basic JWT
+- [x] verify admin
+- [x] admin can delete product
+- [x] use react query for API Call
+- [x] Use React Hook Form
 
 
 ## What to submit 

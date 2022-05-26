@@ -16,6 +16,8 @@ const UserRow = ({ user, index, refetch }) => {
         if (data.modifiedCount) {
           refetch();
           toast.success(`${user?.displayName} is now Admin`);
+        } else {
+          toast.error("You dont have enough permission!");
         }
       });
   };
@@ -44,15 +46,21 @@ const UserRow = ({ user, index, refetch }) => {
       <td>{user?.email}</td>
       <td>{user.uid}</td>
       <td>
-        {user.role !=='admin' ? <span
-          onClick={() => makeAdmin(user.email)}
-          className="font-2xl cursor-pointer bg-green-600 p-2 rounded text-white"
-        >
-          Make Admin
-        </span> : 
-        <span onClick={()=> makeUser(user.email)} className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white">
-          Make User
-        </span>}
+        {user.role !== "admin" ? (
+          <span
+            onClick={() => makeAdmin(user.email)}
+            className="font-2xl cursor-pointer bg-green-600 p-2 rounded text-white"
+          >
+            Make Admin
+          </span>
+        ) : (
+          <span
+            onClick={() => makeUser(user.email)}
+            className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
+          >
+            Make User
+          </span>
+        )}
       </td>
     </tr>
   );
