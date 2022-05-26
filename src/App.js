@@ -14,6 +14,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Payment from "./components/Payment/Payment";
 import Navbar from "./components/Shared/Navbar";
+import NotFound from "./components/Shared/NotFound";
 import RequireAdmin from "./components/Shared/RequireAdmin";
 import RequireAuth from "./components/Shared/RequireAuth";
 import Shop from "./components/Shop/Shop";
@@ -84,6 +85,7 @@ function App() {
             element={<ManageProduct></ManageProduct>}
           ></Route>
         </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </>
   );
