@@ -4,7 +4,7 @@ const Stats = () => {
   return (
     <div>
       {/* trust title  */}
-      <h2 className="text-3xl text-primary font-bold text-center">
+      <h2 className="text-3xl text-primary font-bold text-center mt-7">
         We Build Top 3 Phone Companies Phone!
       </h2>
       <h2 className="text-xl text-primary font-bold text-center">

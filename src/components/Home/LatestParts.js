@@ -1,5 +1,6 @@
 import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
+import HomePartShow from "./HomePartShow";
 
 const LatestParts = () => {
   const [parts, setParts] = useState([]);
@@ -8,10 +9,19 @@ const LatestParts = () => {
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
-  const lastParts = parts.reverse();
   return (
     <div>
-      {[...parts].reverse().map(part=><p>{part.productName}</p>)}
+      <h2 className="text-3xl text-primary font-bold text-center mt-7">
+        Our Latest Parts!
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        {[...parts]
+          .reverse()
+          .slice(0, 6)
+          .map((part) => (
+            <HomePartShow key={part._id} part={part}></HomePartShow>
+          ))}
+      </div>
     </div>
   );
 };
