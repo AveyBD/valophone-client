@@ -4,7 +4,7 @@ import Item from "./Item";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://valophone.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

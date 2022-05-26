@@ -12,7 +12,7 @@ import auth from "../../firebase.init";
 
 const ManageOrderRow = ({ order, index, refetch }) => {
   const markPaid = (id) => {
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://valophone.herokuapp.com/order/${id}`;
     console.log(url);
     fetch(url, {
       method: "put",
@@ -32,7 +32,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
       });
   };
   const addShipment = (id) => {
-    const url = `http://localhost:5000/ship/${id}`;
+    const url = `https://valophone.herokuapp.com/ship/${id}`;
     console.log(url);
     fetch(url, {
       method: "put",
@@ -67,7 +67,7 @@ const ManageOrderRow = ({ order, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://valophone.herokuapp.com/orders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

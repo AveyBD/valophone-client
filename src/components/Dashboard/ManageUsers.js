@@ -9,7 +9,7 @@ const ManageUsers = () => {
     isLoading,
     refetch,
   } = useQuery("manageUser", () =>
-    fetch("http://localhost:5000/users", {
+    fetch("https://valophone.herokuapp.com/users", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

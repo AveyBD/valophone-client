@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [loggedUser, setLoggedUser] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.email}`)
+    fetch(`https://valophone.herokuapp.com/user/${user.email}`)
       .then((res) => res.json())
       .then((data) => setLoggedUser(data));
   }, []);

@@ -15,7 +15,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [loggedUser, setLoggedUser] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.email}`)
+    fetch(`https://valophone.herokuapp.com/user/${user.email}`)
       .then((res) => res.json())
       .then((data) => setLoggedUser(data));
   }, []);
@@ -28,7 +28,7 @@ const MyProfile = () => {
   const onSubmit = (data) => {
     removeEmptyFields(data);
     console.log(data);
-    fetch(`http://localhost:5000/profile/${user.email}`, {
+    fetch(`https://valophone.herokuapp.com/profile/${user.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

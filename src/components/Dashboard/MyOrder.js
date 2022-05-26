@@ -7,7 +7,7 @@ import UserOrderRow from "./UserOrderRow";
 
 const MyOrder = () => {
   const [user] = useAuthState(auth);
-  const url = `http://localhost:5000/myorders?mail=${user.email}`;
+  const url = `https://valophone.herokuapp.com/myorders?mail=${user.email}`;
   const {
     data: orders,
     isLoading,

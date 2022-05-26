@@ -7,7 +7,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`, {
+      fetch(`https://valophone.herokuapp.com/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -15,8 +15,10 @@ const useAdmin = (user) => {
         },
       })
         .then((res) => res.json())
-        .then((data) => {setAdmin(data)
-        setAdminLoading(false)});
+        .then((data) => {
+          setAdmin(data);
+          setAdminLoading(false);
+        });
     }
   }, [user]);
   return [admin, adminLoading];

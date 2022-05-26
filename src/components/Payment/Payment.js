@@ -11,7 +11,7 @@ const Payment = () => {
   const params = useParams();
   const [order, setOrder] = useState([]);
   const orderId = params.id;
-  const url = `http://localhost:5000/orders/${orderId}`;
+  const url = `https://valophone.herokuapp.com/orders/${orderId}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

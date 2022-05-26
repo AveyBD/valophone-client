@@ -9,7 +9,7 @@ const Checkout = () => {
   const [user] = useAuthState(auth);
   const [product, setProduct] = useState([]);
   const params = useParams();
-  const url = `http://localhost:5000/product/${params.id}`;
+  const url = `https://valophone.herokuapp.com/product/${params.id}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -47,7 +47,7 @@ const Checkout = () => {
         paymentStatus: "pending",
         orderStatus: "placed",
       };
-      fetch("http://localhost:5000/orders", {
+      fetch("https://valophone.herokuapp.com/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

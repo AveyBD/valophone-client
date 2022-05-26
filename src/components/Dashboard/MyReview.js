@@ -23,7 +23,7 @@ const MyReview = () => {
       reviewer: user.displayName,
     };
     console.log(newReview);
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://valophone.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

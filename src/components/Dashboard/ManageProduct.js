@@ -9,7 +9,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/products", {
+    fetch("https://valophone.herokuapp.com/products", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

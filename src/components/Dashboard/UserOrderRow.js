@@ -6,9 +6,9 @@ import Swal from "sweetalert2";
 
 const UserOrderRow = ({ order, index, refetch }) => {
   const navigate = useNavigate();
-  const payOrder = id =>{
+  const payOrder = (id) => {
     navigate(`/payment/${id}`);
-  }
+  };
   const delOrder = (id) => {
     console.log("Deleting:", id);
     Swal.fire({
@@ -24,7 +24,7 @@ const UserOrderRow = ({ order, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://valophone.herokuapp.com/orders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -57,7 +57,8 @@ const UserOrderRow = ({ order, index, refetch }) => {
               className="font-2xl cursor-pointer bg-red-600 p-2 rounded text-white"
               icon={faTrash}
             ></FontAwesomeIcon>{" "}
-            <FontAwesomeIcon onClick={()=>payOrder(order?._id)}
+            <FontAwesomeIcon
+              onClick={() => payOrder(order?._id)}
               className="font-2xl cursor-pointer bg-black p-2 rounded text-white"
               icon={faMoneyBillAlt}
             ></FontAwesomeIcon>
