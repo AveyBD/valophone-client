@@ -66,7 +66,7 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [ ] Show name, email, education background, skill tech and three live website like. 
 
 ### 404 Page
-- [ ] Meaningful 404 Page 
+- [x] Meaningful 404 Page 
 
 ## Bonus Part
 
@@ -76,9 +76,9 @@ The Valo Phone is a mobile manufacturer website where a company can build their 
 - [x] Make Website responsive 
 - [x] No Lorem Ipsum
 - [x] use git ignore, .env 
-- [ ] On Manage order all order will be shown, paid non paid status, admin can update the paid status
-- [ ] admin can change the order status pending to shipped
-- [ ] admin can cancel the order (non paid only)
+- [x] On Manage order all order will be shown, paid non paid status, admin can update the paid status
+- [x] admin can change the order status pending to shipped
+- [x] admin can cancel the order (non paid only)
 - [x] Confirm Before Delete
 - [x] basic JWT
 - [x] verify admin
