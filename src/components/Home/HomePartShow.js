@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePartShow = ({part}) => {
   return (
@@ -15,6 +16,14 @@ const HomePartShow = ({part}) => {
           <p class="text-sm tracking-tight font-light text-slate-400 leading-6">
            {part.description.slice(0,150)}
           </p>
+          <div className="card-actions justify-between items-center">
+          <button className="font-bold text-xl text-primary">
+            Price: ${part.price}
+          </button>
+          <Link to={`/checkout/${part._id}`}>
+            <button className="btn btn-primary">Buy Now</button>
+          </Link>
+        </div>
         </div>
       </div>
     </div>
