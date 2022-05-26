@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
               Smartphone ? You are at the perfect place. We, Valo Phone build
               the best smartphone around the world.
             </p>
-            <button className="btn btn-primary">Buy Now</button>
+            <Link to={'/shop'}><button className="btn btn-primary">Buy Now</button></Link>
           </div>
         </div>
       </div>
