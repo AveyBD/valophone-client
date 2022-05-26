@@ -5,7 +5,7 @@ import HomePartShow from "./HomePartShow";
 const LatestParts = () => {
   const [parts, setParts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://valophone.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
