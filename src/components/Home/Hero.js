@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://i.ibb.co/FqdKtmv/Pngtree-fingers-of-man-and-robot-7258873.png"
-            className="w-full rounded-lg shadow-2xl"
+            className="w-full md:max-w-lg rounded-lg shadow-2xl"
           />
           <div className="md:max-w-lg">
             <h1 className="text-5xl font-bold">Valo Phone!</h1>
