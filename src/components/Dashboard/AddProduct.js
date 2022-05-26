@@ -29,14 +29,14 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div class="card w-full md:w-1/2 mx-auto bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="text-primary font-bold text-2xl text-center">
+      <div className="card w-full md:w-1/2 mx-auto bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="text-primary font-bold text-2xl text-center">
             Add New Product
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>Name</span>
                 <input
                   {...register("productName", {
@@ -47,19 +47,19 @@ const AddProduct = () => {
                   })}
                   type="text"
                   placeholder="Mobile Display"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.productname?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.productname.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>Price</span>
                 <input
                   {...register("price", {
@@ -70,20 +70,20 @@ const AddProduct = () => {
                   })}
                   type="number"
                   placeholder="10"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
                 <span>USD</span>
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.price?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.price.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>MinQty</span>
                 <input
                   {...register("minqty", {
@@ -94,20 +94,20 @@ const AddProduct = () => {
                   })}
                   type="number"
                   placeholder="10"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
                 <span>Piece</span>
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.minqty?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.minqty.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>MaxQty</span>
                 <input
                   {...register("maxqty", {
@@ -118,20 +118,20 @@ const AddProduct = () => {
                   })}
                   type="number"
                   placeholder="10"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
                 <span>Piece</span>
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.maxqty?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.maxqty.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>Available</span>
                 <input
                   {...register("available", {
@@ -142,19 +142,19 @@ const AddProduct = () => {
                   })}
                   type="number"
                   placeholder="10"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
                 <span>Piece</span>
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.available?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.available.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
+            <div className="form-control">
               <textarea
                 {...register("description", {
                   required: {
@@ -162,19 +162,19 @@ const AddProduct = () => {
                     message: "Product Description is required! ",
                   },
                 })}
-                class="textarea textarea-bordered h-24"
+                className="textarea textarea-bordered h-24"
                 placeholder="Product Description"
               ></textarea>
-              <label class="label">
+              <label className="label">
                 {errors.description?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.description.message}
                   </span>
                 )}
               </label>
             </div>
-            <div class="form-control">
-              <label class="input-group">
+            <div className="form-control">
+              <label className="input-group">
                 <span>Image</span>
                 <input
                   {...register("img", {
@@ -185,12 +185,12 @@ const AddProduct = () => {
                   })}
                   type="text"
                   placeholder="Image URL"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
               </label>
-              <label class="label">
+              <label className="label">
                 {errors.img?.type === "required" && (
-                  <span class="label-text text-red-600">
+                  <span className="label-text text-red-600">
                     {errors.img.message}
                   </span>
                 )}

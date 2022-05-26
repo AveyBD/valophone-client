@@ -43,17 +43,17 @@ const MyReview = () => {
       <h2>My Review</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 w-3/4 mx-auto">
         <div>
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title">Previous Reviews</h2>
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">Previous Reviews</h2>
               <p>The function has not Yet Implemented!</p>
             </div>
           </div>
         </div>
         <div>
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title">Add New Review</h2>
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">Add New Review</h2>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                   <label className="label">

@@ -1,4 +1,8 @@
-import { faAddressCard, faCalculator, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faCalculator,
+  faToolbox,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -16,17 +20,17 @@ const Payment = () => {
   console.log(order);
   return (
     <div>
-      <div class="hero min-h-screen bg-green-50">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
+      <div className="hero min-h-screen bg-green-50">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card-body">
               <h2 className="text-3xl font-bold text-primary text-center">
                 Payment
               </h2>
             </div>
           </div>
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card-body">
               <h2 className="text-3xl font-bold text-primary text-center">
                 Order Summery
               </h2>
@@ -34,8 +38,14 @@ const Payment = () => {
                 <FontAwesomeIcon icon={faToolbox}></FontAwesomeIcon>:{" "}
                 {order.product}
               </h2>
-              <p><FontAwesomeIcon icon={faCalculator}></FontAwesomeIcon>: {order.time}</p>
-              <p><FontAwesomeIcon icon={faAddressCard}></FontAwesomeIcon>: {order.address}</p>
+              <p>
+                <FontAwesomeIcon icon={faCalculator}></FontAwesomeIcon>:{" "}
+                {order.time}
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAddressCard}></FontAwesomeIcon>:{" "}
+                {order.address}
+              </p>
             </div>
           </div>
         </div>

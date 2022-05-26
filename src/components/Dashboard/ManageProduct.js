@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import AdminProductRow from "./AdminProductRow";
@@ -25,8 +25,8 @@ const ManageProduct = () => {
       <h2 className="text-secondary font-bold text-xl">
         Manage All Product here
       </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -47,7 +47,7 @@ const ManageProduct = () => {
                 key={product._id}
                 product={product}
                 refetch={refetch}
-                index = {index}
+                index={index}
               ></AdminProductRow>
             ))}
           </tbody>

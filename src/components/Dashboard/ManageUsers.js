@@ -21,8 +21,8 @@ const ManageUsers = () => {
   console.log(users);
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table table-zebra w-full">
+      <div className="overflow-x-auto">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
               <th></th>

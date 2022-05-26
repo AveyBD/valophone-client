@@ -19,15 +19,15 @@ const MyOrder = () => {
       },
     }).then((res) => res.json())
   );
-  if(isLoading){
-    return <Loading></Loading>
+  if (isLoading) {
+    return <Loading></Loading>;
   }
   console.log(orders);
   return (
     <div>
       <h2>My Order</h2>
-      <div class="overflow-x-auto">
-        <table class="table table-compact w-full">
+      <div className="overflow-x-auto">
+        <table className="table table-compact w-full">
           <thead>
             <tr>
               <th></th>
