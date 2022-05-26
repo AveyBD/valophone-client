@@ -43,6 +43,7 @@ const ManageOrder = () => {
                 index={index}
                 key={order._id}
                 order={order}
+                refetch={refetch}
               ></ManageOrderRow>
             ))}
           </tbody>
